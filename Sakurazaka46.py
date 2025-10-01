@@ -58,6 +58,8 @@ soup = bs4.BeautifulSoup(html, features="lxml")
 for i in range(len(soup.find("main").find_all("img"))):
     img = soup.find("main").find_all("img")[i]
     print(img)
+    if not img["src"]:
+        continue 
     link = "https://www.sakurazaka46.com" + img["src"]
     link = "/".join(link.split("/")[:-1]) + ".jpg"
     print(img["alt"])
