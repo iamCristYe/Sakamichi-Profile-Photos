@@ -1,8 +1,8 @@
 name: N_sp
 
 on:
-  # schedule:
-  #   - cron: '*/15 * * * *'
+  schedule:
+    - cron: '31 22 * * *'
   workflow_dispatch:
 
 jobs:
