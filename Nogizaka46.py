@@ -10,7 +10,8 @@ def send_telegram_photo(caption, img_url):
         try:
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendPhoto"
             payload = {
-                "chat_id": TELEGRAM_CHAT_ID,
+                "chat_id": "-1002646331785",
+                "message_thread_id": 302,
                 "photo": img_url,
                 "caption": caption,
             }
@@ -32,7 +33,8 @@ def send_telegram_file(caption, file_name):
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument"
             files = {"document": open(file_name, "rb")}
             payload = {
-                "chat_id": TELEGRAM_CHAT_ID,
+                "chat_id": "-1002646331785",
+                "message_thread_id": 302,
                 "caption": caption,
             }
 
@@ -53,7 +55,8 @@ def send_telegram_file_link(caption, file_link):
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument"
 
             payload = {
-                "chat_id": TELEGRAM_CHAT_ID,
+                "chat_id": "-1002646331785",
+                "message_thread_id": 302,
                 "caption": caption,
                 "document": file_link,
                 "parse_mode": "HTML",

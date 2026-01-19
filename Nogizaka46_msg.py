@@ -13,7 +13,8 @@ def send_telegram_photo(caption, img_url):
         try:
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument"
             payload = {
-                "chat_id": TELEGRAM_CHAT_ID,
+                "chat_id": "-1002646331785",
+                "message_thread_id": 302,
                 "document": img_url,
                 "caption": caption,
             }
