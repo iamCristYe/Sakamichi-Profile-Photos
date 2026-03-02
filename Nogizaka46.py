@@ -24,7 +24,7 @@ def send_telegram_photo(caption, img_url):
         except Exception as e:
             print(e)
             time.sleep(5)
-            pass
+            
 
 
 def send_telegram_file(caption, file_name):
@@ -46,7 +46,7 @@ def send_telegram_file(caption, file_name):
         except Exception as e:
             print(e)
             time.sleep(5)
-            pass
+            
 
 
 def send_telegram_file_link(caption, file_link):
@@ -71,7 +71,7 @@ def send_telegram_file_link(caption, file_link):
         except Exception as e:
             print(e)
             time.sleep(5)
-            pass
+            
 
 
 # Example usage
