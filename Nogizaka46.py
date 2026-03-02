@@ -66,7 +66,7 @@ def send_telegram_file_link(caption, file_link):
             response = requests.post(url, data=payload)
             response_body = response.json()
             if "error_code" not in response_body:
-                
+                time.sleep(5)
                 return
         except Exception as e:
             print(e)
