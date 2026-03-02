@@ -21,7 +21,7 @@ def send_telegram_photo(caption, img_url):
             if "error_code" not in response_body:
                 
                 return
-            else
+            else:
                 raise
         except Exception as e:
             print(e)
@@ -45,7 +45,7 @@ def send_telegram_file(caption, file_name):
             if "error_code" not in response_body:
                 
                 return
-            else
+            else:
                 raise
         except Exception as e:
             print(e)
@@ -71,7 +71,7 @@ def send_telegram_file_link(caption, file_link):
             response_body = response.json()
             if "error_code" not in response_body:
                 return
-            else
+            else:
                 raise
         except Exception as e:
             print(e)
