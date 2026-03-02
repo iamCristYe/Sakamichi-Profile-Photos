@@ -19,7 +19,7 @@ def send_telegram_photo(caption, img_url):
             response = requests.post(url, json=payload)
             response_body = response.json()
             if "error_code" not in response_body:
-                time.sleep(5)
+                
                 return
         except Exception as e:
             print(e)
@@ -41,7 +41,7 @@ def send_telegram_file(caption, file_name):
             response = requests.post(url, data=payload, files=files)
             response_body = response.json()
             if "error_code" not in response_body:
-                time.sleep(5)
+                
                 return
         except Exception as e:
             print(e)
