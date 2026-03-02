@@ -16,11 +16,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.8' # Specify the Python version you need
+          python-version: '3.13' # Specify the Python version you need
     
       - name: Run apt and pip
         run: |
-          sudo apt update
           pip install requests
 
       - name: Run Python script
