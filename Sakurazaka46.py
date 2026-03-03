@@ -31,6 +31,7 @@ def send_telegram_photo(caption, img_url):
 
 
 def send_telegram_file_link(caption, file_link):
+    file_link = [file_link]
     while True:
         try:
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument"
@@ -43,17 +44,16 @@ def send_telegram_file_link(caption, file_link):
                 "parse_mode": "HTML",
             }
 
-            file_link = [file_link]
+            
             response = requests.post(url, data=payload)
             response_body = response.json()
+            print(response_body)
             if "error_code" not in response_body:
-                time.sleep(5)
                 return
+            raise
         except Exception as e:
             print(e)
             time.sleep(5)
-            pass
-
 
 html = requests.get("https://sakurazaka46.com/s/s46/search/artist").content
 soup = bs4.BeautifulSoup(html, features="lxml")
