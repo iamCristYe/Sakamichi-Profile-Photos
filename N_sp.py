@@ -87,6 +87,7 @@ def send_telegram_file_link(caption, file_link):
             response = requests.post(url, data=payload)
             response_body = response.json()
             print(response_body)
+            print(payload)
             if "error_code" not in response_body:
                 return
             raise
