@@ -106,5 +106,5 @@ for i in range(len(members)):
     )
     send_telegram_file_link(
         f"<a href=\"{member['img_src']}\">{i+1}/{len(members)}</a>\n{member['name']}\n{member['nickname']}",
-        member["img_src"] + f"?{str(datetime.datetime.now())}",
+        member["img_src"] + f"?{str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))}",
     )
