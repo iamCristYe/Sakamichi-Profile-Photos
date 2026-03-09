@@ -70,8 +70,12 @@ def send_telegram_photo(caption, img_url):
 
 
 def send_telegram_file_link(caption, file_link):
-    file_link = [file_link]
     while True:
+        
+        import random
+        import string
+        file_link=file_link + "".join(random.choices(string.ascii_letters + string.digits, k=8))  
+
         try:
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument"
 
