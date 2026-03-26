@@ -22,11 +22,11 @@ def send_telegram_photo(caption, img_url):
             response = requests.post(url, json=payload)
             response_body = response.json()
             if "error_code" not in response_body:
-                time.sleep(5)
+                time.sleep(20)
                 return
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
             pass
 
 
@@ -53,7 +53,7 @@ def send_telegram_file_link(caption, file_link):
             raise
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
 
 html = requests.get("https://sakurazaka46.com/s/s46/search/artist").content
 soup = bs4.BeautifulSoup(html, features="lxml")

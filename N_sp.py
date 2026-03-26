@@ -61,11 +61,11 @@ def send_telegram_photo(caption, img_url):
             response = requests.post(url, json=payload)
             response_body = response.json()
             if "error_code" not in response_body:
-                time.sleep(5)
+                time.sleep(20)
                 return
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
             pass
 
 
@@ -97,7 +97,7 @@ def send_telegram_file_link(caption, file_link):
             raise
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
 
 
 members = parse_html()
@@ -110,5 +110,5 @@ for i in range(len(members)):
     )
     send_telegram_file_link(
         f"<a href=\"{member['img_src']}\">{i+1}/{len(members)}</a>\n{member['name']}\n{member['nickname']}",
-        member["img_src"] + f"?{str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))}",
+        member["img_src"] + f"?{str(datetime.datetime.now().strftime('%Y%m%d%H%M%S'))}",
     )

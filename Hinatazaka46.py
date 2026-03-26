@@ -23,11 +23,11 @@ def send_telegram_photo(caption, img_url):
             response = requests.post(url, json=payload)
             response_body = response.json()
             if "error_code" not in response_body:
-                time.sleep(5)
+                time.sleep(20)
                 return
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
             pass
 
 
@@ -54,7 +54,7 @@ def send_telegram_file_link(caption, file_link):
             raise
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
 
 
 html = requests.get("https://hinatazaka46.com/s/official/search/artist").content

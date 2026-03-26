@@ -26,7 +26,7 @@ def send_telegram_photo(caption, img_url):
                 return
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(20)
             pass
 
 
@@ -84,4 +84,4 @@ for group_num in range(0, 101):
         time.sleep(1)  # Delay between groups
     except Exception as e:
         print(f"Error processing group {group_id}: {e}")
-        time.sleep(5)
+        time.sleep(20)
